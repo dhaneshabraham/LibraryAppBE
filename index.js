@@ -2,12 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+var app = express();
 app.use(express.static('./dist/LibraryApp'));
 
 const { mongoose } = require('./db.js');
 var bookController = require('./controllers/bookController.js');
 
-var app = express();
 app.use(bodyParser.json());
 app.use(cors({ origin: 'http://localhost:4200' }));
 
